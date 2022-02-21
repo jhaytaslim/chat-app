@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon --config nodemon.json src/app.ts",
-    "postinstall": "tsc",
-    "start": "tsc --build && node dist/src/app.js"
+    "postinstall": "tsc tsc --build",
+    "start": "node dist/src/app.js"
   },
   "devDependencies": {
     "@types/config": "^0.0.38",
