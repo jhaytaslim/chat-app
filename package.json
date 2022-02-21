@@ -5,7 +5,9 @@
   "author": "Tom Nagle",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --config nodemon.json src/app.ts"
+    "dev": "nodemon --config nodemon.json src/app.ts",
+    "postinstall": "tsc",
+    "start": "node dist/app.js"
   },
   "devDependencies": {
     "@types/config": "^0.0.38",
