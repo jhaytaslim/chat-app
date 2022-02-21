@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nodemon --config nodemon.json src/app.ts",
     "postinstall": "tsc",
-    "start": "node dist/app.js"
+    "start": "tsc --build && node dist/src/app.js"
   },
   "devDependencies": {
     "@types/config": "^0.0.38",
