@@ -1,22 +1,10 @@
 import { nanoid } from "nanoid";
 import { Server, Socket } from "socket.io";
 import logger from "./utils/logger";
+import {users,rooms, Room} from './utils/data'
+import EVENTS from './utils/event'
 
-const EVENTS = {
-  connection: "connection",
-  CLIENT: {
-    CREATE_ROOM: "CREATE_ROOM",
-    SEND_ROOM_MESSAGE: "SEND_ROOM_MESSAGE",
-    JOIN_ROOM: "JOIN_ROOM",
-  },
-  SERVER: {
-    ROOMS: "ROOMS",
-    JOINED_ROOM: "JOINED_ROOM",
-    ROOM_MESSAGE: "ROOM_MESSAGE",
-  },
-};
 
-const rooms: Record<string, { name: string }> = {};
 
 function socket({ io }: { io: Server }) {
   logger.info(`Sockets enabled`);
@@ -34,7 +22,7 @@ function socket({ io }: { io: Server }) {
       // create a roomId
       const roomId = nanoid();
       // add a new room to the rooms object
-      rooms[roomId] = {
+      rooms[roomId] = <Room>{
         name: roomName,
       };
 
