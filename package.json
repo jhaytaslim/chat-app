@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon --config nodemon.json src/app.ts",
-    "postinstall": "tsc tsc --build",
+    "postinstall": "tsc --build",
     "start": "node dist/src/app.js"
   },
   "devDependencies": {
